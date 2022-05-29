@@ -1,0 +1,13 @@
+{
+    "project_name": "Python Boilerplate",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+    "pkg_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "description": "Skeleton project created by Cookiecutter.",
+    "full_name": "William Christian",
+    "email": "verilliousdev@gmail.com",
+    "github_username": "verillious",
+    "year": "{% now 'utc', '%Y' %}",
+    "version": "0.1.0",
+    "command_line_interface": ["Click", "No command-line interface"],
+    "_extensions": ["jinja2_time.TimeExtension"]
+  }
