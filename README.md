@@ -28,5 +28,5 @@ pip install -U cookiecutter
 Generate a Python package project:
 
 ```
-cookiecutter verillious/cookiecutter-python
+cookiecutter gh:verillious/cookiecutter-python
 ```
