@@ -1,4 +1,4 @@
-# cookiecutter-python
+# 🍪 cookiecutter-python
 A Cookiecutter template for python packages
 
 ## Features
