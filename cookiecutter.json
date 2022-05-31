@@ -8,6 +8,7 @@
     "github_username": "verillious",
     "year": "{% now 'utc', '%Y' %}",
     "version": "0.1.0",
-    "command_line_interface": ["Click", "No command-line interface"],
+    "command_line_interface": ["typer", "none"],
+    "api": ["fastapi", "none"],
     "_extensions": ["jinja2_time.TimeExtension"]
   }
