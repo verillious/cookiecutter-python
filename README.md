@@ -14,7 +14,8 @@ This tool will create Python project with the following features:
 * Check static type with [Mypy](http://mypy-lang.org/)
 * Check for code vulnerabilities with [Bandit](https://bandit.readthedocs.io/en/latest/)
 * Build docs with [Sphinx](https://www.sphinx-doc.org/en/master/index.html)
-* Command line interface using [Click](https://click.palletsprojects.com/en/8.0.x/) (optional)
+* Command line interface using [typer](https://typer.tiangolo.com/) (optional)
+* API using [fastapi](https://fastapi.tiangolo.com/) (optional)
 * [bump2version](https://github.com/c4urself/bump2version): Pre-configured version bumping and tagging with a single command
 
 ## Quickstart
