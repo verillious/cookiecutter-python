@@ -3,7 +3,7 @@ A Cookiecutter template for python packages
 
 ## Features
 
-This tool will create Python project with the following features:
+This tool will create a Python project with the following features:
 
 * [Tox](https://tox.readthedocs.io): Run formatting, linting, code-checking and other CI features with tox.
 * [EditorConfig](https://editorconfig.org/): Maintain consistent coding styles for multiple developers working on the same project
