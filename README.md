@@ -1,4 +1,9 @@
 # 🍪 cookiecutter-python
+
+![Black](https://img.shields.io/badge/code%20style-black-000000.svg)
+![Pulse](https://img.shields.io/github/commit-activity/m/verillious/cookiecutter-python)
+![Checks](https://github.com/verillious/cookiecutter-python/actions/workflows/check.yml/badge.svg)
+
 A Cookiecutter template for python packages
 
 ## Features

@@ -1,7 +1,7 @@
 """Tests for `{{ cookiecutter.pkg_name }}` package."""
 
 import importlib
-{% if cookiecutter.api|lower == 'fastapi' %}
+{% if cookiecutter.api|lower == 'y' %}
 from fastapi.testclient import TestClient
 
 from {{ cookiecutter.pkg_name }}.api import app
@@ -15,14 +15,14 @@ def test_api_get_root():
     response = client.get("/")
     assert response.status_code == 200
     assert response.json() == "{{ cookiecutter.project_slug }} {{ cookiecutter.version }}"
-{% elif cookiecutter.command_line_interface|lower == 'typer' %}
+{% elif cookiecutter.cli|lower == 'y' %}
 
 from typer.testing import CliRunner
 
 from {{ cookiecutter.pkg_name }}.cli import app
 
 
-def test_command_line_interface():
+def test_cli():
     """Test the CLI."""
 
     runner = CliRunner()

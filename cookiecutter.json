@@ -6,9 +6,10 @@
     "full_name": "William Christian",
     "email": "verilliousdev@gmail.com",
     "github_username": "verillious",
+    "github_workflows": "n",
     "year": "{% now 'utc', '%Y' %}",
     "version": "0.1.0",
-    "command_line_interface": ["typer", "none"],
-    "api": ["fastapi", "none"],
+    "cli": "n",
+    "api": "n",
     "_extensions": ["jinja2_time.TimeExtension"]
   }

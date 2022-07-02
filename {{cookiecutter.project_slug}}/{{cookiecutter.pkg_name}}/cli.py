@@ -1,9 +1,9 @@
 """Console script for {{cookiecutter.pkg_name}}."""
-{%- if cookiecutter.command_line_interface|lower == 'typer' %}
+{%- if cookiecutter.cli|lower == 'y' %}
 
 import typer
 
-{%- if cookiecutter.api|lower == 'fastapi' %}
+{%- if cookiecutter.api|lower == 'y' %}
 
 from {{ cookiecutter.pkg_name }} import api
 {% endif %}
@@ -14,9 +14,9 @@ app = typer.Typer()
 def main() -> None:
     """Main entrypoint."""
 
-{%- if cookiecutter.api|lower == 'fastapi' %}
+{%- if cookiecutter.api|lower == 'y' %}
     api.run()
-{%- elif cookiecutter.command_line_interface|lower == 'typer' %}
+{%- elif cookiecutter.cli|lower == 'y' %}
     typer.echo("{{ cookiecutter.project_slug }}")
     typer.echo("=" * len("{{ cookiecutter.project_slug }}"))
     typer.echo("{{ cookiecutter.description }}")

@@ -1,5 +1,4 @@
 """API script for {{cookiecutter.pkg_name}}."""
-{%- if cookiecutter.api|lower == 'fastapi' %}
 
 import json
 import typing
@@ -14,13 +13,28 @@ app = FastAPI()
 
 
 class Item(BaseModel):
-    """Template for a request body model"""
+    """
+    A template put request item
+
+    Args:
+        BaseModel (pydantic.BaseModel): pydantic BaseModel base class
+    """
 
     id: int
     name: str
 
 
 class PrettyJSONResponse(Response):
+    """
+    Creates a prettified JSON output from a starlette Response
+
+    Args:
+        Response (starlette.responses.Response): the response to prettify
+
+    Returns:
+        str: prettified JSON string
+    """
+
     media_type = "application/json"
 
     def render(self, content: typing.Any) -> bytes:
@@ -64,7 +78,7 @@ def read_item(item_id: int, query: Optional[str] = None) -> dict:
 @app.put("/items/{item_id}")
 def update_item(item_id: int, item: Item) -> dict:
     """
-    _summary_
+    Template for a put request
 
     Args:
         item_id (int): an item id
@@ -81,4 +95,3 @@ def run() -> None:
     """launch the api"""
 
     uvicorn.run(app, host="127.0.0.1", port=5000, log_level="info")
-{%- endif %}
