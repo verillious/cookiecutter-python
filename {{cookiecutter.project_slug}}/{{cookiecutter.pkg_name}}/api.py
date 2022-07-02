@@ -12,6 +12,7 @@ from starlette.responses import Response
 app = FastAPI()
 
 
+# pylint: disable=too-few-public-methods
 class Item(BaseModel):
     """
     A template put request item

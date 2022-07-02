@@ -41,14 +41,14 @@ def test_bake_project(cookies):
             "tox.ini",
         ]
 
-    tests_level = [f.name for f in tests_dir.iterdir()]
-    assert tests_level == ["test_python_boilerplate.py", "__init__.py"]
+    for entry in [f.name for f in tests_dir.iterdir()]:
+        assert entry in ["test_python_boilerplate.py", "__init__.py"]
 
-    core_level = [f.name for f in core_dir.iterdir()]
-    assert core_level == ["core.py", "__init__.py"]
+    for entry in [f.name for f in core_dir.iterdir()]:
+        assert entry in ["core.py", "__init__.py"]
 
-    docs_level = [f.name for f in docs_dir.iterdir()]
-    assert docs_level == ["conf.py", "index.rst"]
+    for entry in [f.name for f in docs_dir.iterdir()]:
+        assert entry in ["conf.py", "index.rst"]
 
 
 def test_bake_with_api(cookies):
