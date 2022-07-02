@@ -21,7 +21,7 @@ This tool will create a Python project with the following features:
 * Build docs with [Sphinx](https://www.sphinx-doc.org/en/master/index.html)
 * Command line interface using [typer](https://typer.tiangolo.com/) (optional)
 * API using [fastapi](https://fastapi.tiangolo.com/) (optional)
-* GitHub workflows for uploading to PyPI and running code checks
+* GitHub workflows for uploading to PyPI and running code checks (optional)
 * [bump2version](https://github.com/c4urself/bump2version): Pre-configured version bumping and tagging with a single command
 
 ## Quickstart
