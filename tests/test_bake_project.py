@@ -26,20 +26,20 @@ def test_bake_project(cookies):
     core_dir = result.project_path / "python_boilerplate"
     docs_dir = result.project_path / "docs"
 
-    top_level = [f.name for f in result.project_path.iterdir()]
-    assert top_level == [
-        ".bumpversion.cfg",
-        ".editorconfig",
-        ".gitignore",
-        "CHANGELOG.md",
-        "docs",
-        "python_boilerplate",
-        "README.md",
-        "setup.cfg",
-        "setup.py",
-        "tests",
-        "tox.ini",
-    ]
+    for entry in [f.name for f in result.project_path.iterdir()]:
+        assert entry in [
+            ".bumpversion.cfg",
+            ".editorconfig",
+            ".gitignore",
+            "CHANGELOG.md",
+            "docs",
+            "python_boilerplate",
+            "README.md",
+            "setup.cfg",
+            "setup.py",
+            "tests",
+            "tox.ini",
+        ]
 
     tests_level = [f.name for f in tests_dir.iterdir()]
     assert tests_level == ["test_python_boilerplate.py", "__init__.py"]
@@ -49,8 +49,6 @@ def test_bake_project(cookies):
 
     docs_level = [f.name for f in docs_dir.iterdir()]
     assert docs_level == ["conf.py", "index.rst"]
-    setup_py = result.project_path / "setup.py"
-    assert setup_py.read_text() == "test"
 
 
 def test_bake_with_api(cookies):
@@ -58,10 +56,8 @@ def test_bake_with_api(cookies):
     assert result.exit_code == 0
     core_dir = result.project_path / "python_boilerplate"
 
-    core_level = [f.name for f in core_dir.iterdir()]
-    assert core_level == ["api.py", "core.py", "__init__.py"]
-    setup_py = result.project_path / "setup.py"
-    assert setup_py.read_text() == "test"
+    for entry in [f.name for f in core_dir.iterdir()]:
+        assert entry in ["api.py", "core.py", "__init__.py"]
 
 
 def test_bake_with_cli(cookies):
@@ -69,10 +65,8 @@ def test_bake_with_cli(cookies):
     assert result.exit_code == 0
     core_dir = result.project_path / "python_boilerplate"
 
-    core_level = [f.name for f in core_dir.iterdir()]
-    assert core_level == ["cli.py", "core.py", "__init__.py"]
-    setup_py = result.project_path / "setup.py"
-    assert setup_py.read_text() == "test"
+    for entry in [f.name for f in core_dir.iterdir()]:
+        assert entry in ["cli.py", "core.py", "__init__.py"]
 
 
 def test_bake_with_workflows(cookies):
@@ -80,8 +74,8 @@ def test_bake_with_workflows(cookies):
     assert result.exit_code == 0
     workflow_dir = result.project_path / ".github" / "workflows"
 
-    workflow_level = [f.name for f in workflow_dir.iterdir()]
-    assert workflow_level == ["publish.yml"]
+    for entry in [f.name for f in workflow_dir.iterdir()]:
+        assert entry in ["publish.yml", "check.yml"]
 
 
 def test_bake_with_api_and_cli(cookies):
@@ -89,10 +83,8 @@ def test_bake_with_api_and_cli(cookies):
     assert result.exit_code == 0
     core_dir = result.project_path / "python_boilerplate"
 
-    core_level = [f.name for f in core_dir.iterdir()]
-    assert core_level == ["api.py", "cli.py", "core.py", "__init__.py"]
-    setup_py = result.project_path / "setup.py"
-    assert setup_py.read_text() == "test"
+    for entry in [f.name for f in core_dir.iterdir()]:
+        assert entry in ["api.py", "cli.py", "core.py", "__init__.py"]
 
 
 @pytest.mark.parametrize(
